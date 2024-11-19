@@ -1,4 +1,5 @@
 // server.js
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes'); // Import your general routes
@@ -11,13 +12,12 @@ const app = express();
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/parking-management', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.log('Failed to connect to MongoDB', err));
-
+.then(() => console.log('Connected to MongoDB'))
+.catch((err) => console.log('Failed to connect to MongoDB', err));
 // Use routes
 app.use('/api', routes); // General routes
 app.use('/api/userAccount', userAccountRoutes); // User account routes
