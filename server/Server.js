@@ -24,7 +24,7 @@ app.use('/api/userAccount', userAccountRoutes); // User account routes
 app.use('/api/parkingSpace', parkingSpaceRoutes); // Parking space routes
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
