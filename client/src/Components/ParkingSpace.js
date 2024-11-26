@@ -29,7 +29,7 @@ const ParkingSpace = () => {
   // Fetch parking spaces with detailed logging
   const fetchParkingSpaces = async (token) => {
     try {
-      const response = await axios.get('http://localhost:5000/api/route/parking-spaces', {
+      const response = await axios.get('http://localhost:5001/api/route/parking-spaces', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -57,7 +57,7 @@ const ParkingSpace = () => {
         
         if (token) {
           const [walletResponse] = await Promise.all([
-            axios.get('http://localhost:5000/api/route/wallet', {
+            axios.get('http://localhost:5001/api/route/wallet', {
               headers: { Authorization: `Bearer ${token}` },
             }),
           ]);
@@ -131,7 +131,7 @@ const ParkingSpace = () => {
       for (const type of Object.keys(selectedSlots)) {
         for (const slotIndex of selectedSlots[type]) {
           await axios.post(
-            'http://localhost:5000/api/route/park-vehicle',
+            'http://localhost:5001/api/route/park-vehicle',
             {
               vehicleType: type,
               slotNumber: slotIndex,
@@ -149,7 +149,7 @@ const ParkingSpace = () => {
 
       // Refetch parking spaces and wallet
       await fetchParkingSpaces(token);
-      const walletResponse = await axios.get('http://localhost:5000/api/route/wallet', {
+      const walletResponse = await axios.get('http://localhost:5001/api/route/wallet', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setWallet(walletResponse.data.data);

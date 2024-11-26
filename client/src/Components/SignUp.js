@@ -22,7 +22,7 @@ const SignUp = () => {
     e.preventDefault();
     setLoading(true); // Start loading
     try {
-      const response = await fetch('http://localhost:5000/api/route/signup', {
+      const response = await fetch('http://localhost:5001/api/route/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

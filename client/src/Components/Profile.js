@@ -16,7 +16,7 @@ const Profile = () => {
       if (!token) return navigate('/login'); 
 
       try {
-        const response = await fetch('http://localhost:5000/api/route/profile', {
+        const response = await fetch('http://localhost:5001/api/route/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -40,7 +40,7 @@ const Profile = () => {
     if (!token) return navigate('/login');
 
     try {
-      const response = await fetch('http://localhost:5000/api/route/profile/email', {
+      const response = await fetch('http://localhost:5001/api/route/profile/email', {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ const Profile = () => {
     if (!token) return navigate('/login');
 
     try {
-      const response = await fetch('http://localhost:5000/api/route/profile/password', {
+      const response = await fetch('http://localhost:5001/api/route/profile/password', {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,

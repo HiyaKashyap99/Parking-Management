@@ -55,7 +55,7 @@
   }
   
   span {
-    background-color: #4caf50; /* Default green for Available */
+    background-color: #d51b7e; /* Default green for Available */
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -65,15 +65,15 @@
   }
   
   .twowheeler span {
-    background-color: #8bc34a; /* Light Green for Two-Wheeler */
+    background-color: #cf638d; /* Light Green for Two-Wheeler */
   }
   
   .threewheeler span {
-    background-color: #ffeb3b; /* Yellow for Three-Wheeler */
+    background-color: #826ddf; /* Yellow for Three-Wheeler */
   }
   
   .fourwheeler span {
-    background-color: #2196f3; /* Blue for Four-Wheeler */
+    background-color: #c88c2b; /* Blue for Four-Wheeler */
   }
   
   span:hover {

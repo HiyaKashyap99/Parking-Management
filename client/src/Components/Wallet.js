@@ -25,7 +25,7 @@ const Wallet = () => {
 
     try {
       setIsLoading(true);
-      const response = await axios.get('http://localhost:5000/api/route/wallet', {
+      const response = await axios.get('http://localhost:5001/api/route/wallet', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -56,7 +56,7 @@ const Wallet = () => {
     try {
       setIsLoading(true);
       const response = await axios.put(
-        'http://localhost:5000/api/route/wallet',
+        'http://localhost:5001/api/route/wallet',
         { amount: parseFloat(amount) },
         {
           headers: {
